@@ -54,7 +54,16 @@ class User():
             else:
                 output.output("The username you selected is already in use. If that is you, you " \
                 "can use it. If not, try with a different ID")
-        
+        output.output(f"Great! Your user id is {user_id}. You only need to remember it so I can find " \
+                      "your information")
+        user_name = None
+        while user_name is None:
+            output.output("Now, tell me the way you'd like to be called.")
+            requested_user_name = input()
+            if requested_user_name is None:
+                output.output(f"It doesn't looks like you entered anything. Shall I call you {user_id}?")
+                use_user_id_as_name_response = input("Enter 'Y' to go with that or anything else to try " \
+                "again at entering youre preferred name")
 
 
     def create_user(self, name: str|None = None):
